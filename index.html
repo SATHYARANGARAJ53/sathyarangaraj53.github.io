@@ -8,7 +8,7 @@
   <style>
     body {
       min-height: 100vh;
-      background: #000; /* PURE BLACK */
+      background: #000;
       font-family: "Poppins", Arial, sans-serif;
       color: #e2e7ef;
       margin: 0;
@@ -87,16 +87,24 @@
       margin-bottom: 0;
     }
     h2 {
-      color: #69c8fa;
-      font-size: 1.33rem;
+      color: #7bd3fa;
+      font-size: 1.42rem;
       font-weight: 700;
       margin-bottom: 11px;
       margin-top: 0;
       letter-spacing: 0.03em;
     }
+    .project-title {
+      color: #36c9b0; /* Soft turquoise/teal for project/app names */
+      font-weight: 700;
+      font-size: 1.08em;
+      letter-spacing: 0.04em;
+      display: inline-block;
+      margin-bottom: 2px;
+    }
     ul { color: #c8e4fa; padding-left: 22px;}
     li { margin-bottom: 6px; line-height: 1.64;}
-    strong { color: #6ce1c9; }
+    strong { color: #ffd784; font-weight:600; font-size:1.05em; letter-spacing:0.02em;}
     p { color: #f4f8fc; line-height:1.74;}
     @media (max-width: 700px) {
       .container {padding:18px 4vw;}
@@ -156,7 +164,7 @@
       <h2>Projects</h2>
       <ul>
         <li>
-          <strong>DocuQuest:</strong>
+          <span class="project-title">DocuQuest:</span>
           <ul>
             <li>Document-based chatbot using LangChain for PDF processing and OpenAI API for natural language answers.</li>
             <li>Telegram integration for user interaction and instant information retrieval from PDFs.</li>
@@ -164,7 +172,7 @@
           </ul>
         </li>
         <li>
-          <strong>Expense Tracker:</strong>
+          <span class="project-title">Expense Tracker:</span>
           <ul>
             <li>Full Stack web app using MongoDB, Express.js, React, Node.js for daily expense tracking and financial insights.</li>
             <li>Used Git for version control, collaborated with testers for QA.</li>
