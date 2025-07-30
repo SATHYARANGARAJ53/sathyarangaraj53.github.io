@@ -32,17 +32,6 @@
       margin-bottom: 20px;
       letter-spacing: 0.04em;
     }
-    /* Uncomment below to add a profile image
-    .profile-img {
-      width:110px;
-      height:110px;
-      border-radius:50%;
-      border:3px solid #36c9b0;
-      margin-bottom:18px;
-      box-shadow:0 2px 8px #0df6e055;
-      object-fit:cover;
-    }
-    */
     .header h1 {
       margin: 0 0 8px;
       font-size: 2.7rem;
@@ -109,8 +98,14 @@
       border-left: 5px solid #36c9b0;
       padding-left: 12px;
     }
+    .blue-accent, .card strong {
+      color: #7bd3fa !important;
+      font-weight: 600;
+      font-size: 1.05em;
+      letter-spacing: 0.03em;
+    }
     .project-title {
-      color: #7bd3fa;
+      color: #36c9b0;
       font-weight: 700;
       font-size: 1.12em;
       margin-bottom: 2px;
@@ -118,7 +113,6 @@
     }
     ul { color: #c8e4fa; padding-left: 22px;}
     li { margin-bottom: 6px; line-height: 1.64;}
-    strong { color: #ffd784; font-weight:600; font-size:1.05em; letter-spacing:0.02em;}
     p { color: #f4f8fc; line-height:1.74;}
     @media (max-width: 700px) {
       .container {padding:18px 4vw;}
@@ -132,9 +126,6 @@
 <body>
   <div class="container">
     <div class="header">
-      <!-- Uncomment below line and replace photo URL to display your profile picture
-      <img src="your-photo.jpg" alt="Sathya Rangaraj profile" class="profile-img" />
-      -->
       <h1>Sathya Rangaraj</h1>
       <div class="contact-row">
         <a href="mailto:rangarajsathya53@gmail.com" title="Email">Email</a>
@@ -148,7 +139,7 @@
     <div class="card">
       <h2>About Me</h2>
       <p>
-        Recent graduate in Information Technology and current Associate Engineer at Coforge, passionate about problem-solving, continuous learning, and delivering impactful technology solutions. I thrive on collaboration and innovation, and I am eager to grow as a software developer.
+        Recent graduate in <span class="blue-accent">Information Technology</span> and current Associate Engineer at Coforge, passionate about problem-solving, continuous learning, and delivering impactful technology solutions. I thrive on collaboration and innovation, and I am eager to grow as a software developer.
       </p>
     </div>
 
@@ -164,7 +155,7 @@
     <div class="card">
       <h2>Education</h2>
       <p>
-        <strong>Bachelor of Technology (Information Technology)</strong><br>
+        <span class="blue-accent">Bachelor</span> of Technology (<span class="blue-accent">Information Technology</span>)<br>
         Karpagam Institute of Technology, Coimbatore, India<br>
         CGPA: 8.11 (2021 – 2025)
       </p>
@@ -173,8 +164,8 @@
     <div class="card">
       <h2>Skills</h2>
       <ul>
-        <li><strong>Technical:</strong> Java (Intermediate), MERN Stack (Intermediate), Flask (Beginner), Android Development (Beginner)</li>
-        <li><strong>Soft:</strong> Problem Solving, Collaboration, Quick Learner</li>
+        <li><span class="blue-accent">Technical:</span> Java (Intermediate), MERN Stack (Intermediate), Flask (Beginner), Android Development (Beginner)</li>
+        <li><span class="blue-accent">Soft:</span> Problem Solving, Collaboration, Quick Learner</li>
       </ul>
     </div>
 
@@ -202,12 +193,12 @@
     <div class="card">
       <h2>Certificates</h2>
       <ul>
-        <li>Data Structures and Algorithms using Java - Infosys Springboard</li>
-        <li>Java (Basic) - Hackerrank</li>
-        <li>Responsive Web Design - FreeCodeCamp</li>
-        <li>React - Coursera (Meta)</li>
-        <li>Problem Solving (Basic) - Hackerrank</li>
-        <li>Java Full Stack - Wipro TalentNext</li>
+        <li><span class="blue-accent">Data Structures and Algorithms using Java</span> - Infosys Springboard</li>
+        <li><span class="blue-accent">Java (Basic)</span> - Hackerrank</li>
+        <li><span class="blue-accent">Responsive Web Design</span> - FreeCodeCamp</li>
+        <li><span class="blue-accent">React</span> - Coursera (Meta)</li>
+        <li><span class="blue-accent">Problem Solving (Basic)</span> - Hackerrank</li>
+        <li><span class="blue-accent">Java Full Stack</span> - Wipro TalentNext</li>
       </ul>
     </div>
   </div>
