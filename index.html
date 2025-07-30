@@ -6,91 +6,118 @@
   <title>Sathya R - Portfolio</title>
   <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --accent: #00ffe0;
-      --bg: #111216;
-      --card-bg: #181921;
-      --text: #f4f6fa;
-      --text-soft: #a0aec0;
-      --radius: 18px;
-    }
+    /* Background gradient animation */
     body {
+      min-height: 100vh;
       margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', Arial, sans-serif;
+      background: linear-gradient(120deg, #2b2b4d 0%, #111216 100%);
+      background-size: 200% 200%;
+      animation: grad-move 18s ease-in-out infinite;
+      color: #f4f6fa;
+      font-family: "Inter", Arial, sans-serif;
+    }
+    @keyframes grad-move {
+      0%,100% { background-position: 0% 50%;}
+      50%  { background-position: 100% 50%;}
     }
     .container {
-      max-width: 860px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 40px 8vw 70px;
+      padding: 48px 14px 72px;
       display: flex;
       flex-direction: column;
-      gap: 32px;
-      min-height: 100vh;
+      gap: 36px;
       align-items: center;
     }
     .header {
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
     .header h1 {
-      margin: 0 0 4px;
+      margin: 0 0 6px;
+      font-size: 2.6rem;
       font-weight: 700;
-      font-size: 2.3rem;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+      text-shadow: 0 2px 18px #5fffe9ab, 0 1px 0 #101921;
     }
     .contact-row {
       display: flex;
-      gap: 22px;
+      gap: 26px;
       justify-content: center;
       flex-wrap: wrap;
-      margin: 5px 0;
+      margin: 14px 0 0 0;
     }
     .contact-row a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: color 0.15s, filter 0.2s;
+      color: #00ffe0;
       font-weight: 600;
-      letter-spacing: 0.3px;
-      font-size:1rem;
-    }
-    .contact-row a:hover {
-      color: #fff;
-      filter: brightness(1.4);
-      text-decoration: underline;
-    }
-    .card {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      padding: 30px 36px;
-      box-shadow: 0 5px 24px 0 #0007, 0 1.5px 9px #00ffe033;
-      margin-bottom: 0;
-      transition: transform 0.22s cubic-bezier(.23,1.07,.74,1.19), box-shadow 0.18s;
-      will-change: transform;
-      cursor: pointer;
+      background: rgba(40,55,85,0.18);
+      box-shadow: 0 1.5px 10px #00ffe033;
+      padding: 8px 18px;
+      border-radius: 24px;
+      letter-spacing:0.01em;
+      transition: background 0.19s, color 0.16s, box-shadow 0.2s;
+      text-decoration: none;
+      border: 1px solid transparent;
+      font-size:1.07rem;
       position: relative;
-    }
-    .card:hover, .card:focus-within {
-      transform: translateY(-10px) scale(1.035) rotateZ(-1deg);
-      box-shadow: 0 14px 48px 0 #00ffe055, 0 1.5px 13px #00ffe01a, 0 1px 1.5px #222c;
       z-index: 2;
     }
-    h2 {
-      color: var(--accent);
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 13px;
-      margin-top: 0;
-      letter-spacing: 0.3px;
+    .contact-row a:hover {
+      color: #222;
+      background: #00ffe0;
+      box-shadow: 0 4px 24px #00ffe055;
+      border: 1px solid #00ffe0;
     }
-    ul { color: var(--text-soft); padding-left: 21px; }
-    li { margin-bottom: 6px; line-height: 1.5; }
-    strong { color: var(--accent);}
-    .address {color: var(--text-soft); font-size:1rem; text-align:center; margin:18px 0 0 0;}
-    @media (max-width: 640px) {
-      .container {padding:20px 3vw;}
-      .card {padding:18px 10px;}
+    .address {
+      color: #b9e1f6;
+      font-size:1rem;
+      text-align:center;
+      margin:18px 0 0 0;
+      letter-spacing: 0.13em;
+      opacity: .8;
+    }
+    /* GLASSMORPHISM CARD */
+    .card {
+      width: 100%;
+      max-width: 740px;
+      background: rgba(28,32,45,0.68);
+      border-radius: 23px;
+      padding: 36px 44px 30px 36px;
+      box-shadow: 0 6px 38px 0 #070b125f, 0 1.5px 18px #00ffe049;
+      backdrop-filter: blur(7px);
+      position: relative;
+      border: 1.6px solid rgba(61,255,232,0.21);
+      margin-bottom: 0;
+      transition: transform .24s cubic-bezier(.22,1.08,.73,1.2), box-shadow 0.18s, border 0.18s;
+      will-change: transform;
+      cursor: pointer;
+      z-index: 1;
+    }
+    .card:hover, .card:focus-within {
+      transform: translateY(-14px) scale(1.03) rotateZ(-1deg);
+      box-shadow: 0 14px 62px #00ffe07f, 0 2px 15px #00ffe017, 0 1.5px 6px #222d;
+      border: 1.6px solid #00ffe0cf;
+      z-index: 3;
+    }
+    h2 {
+      color: #00ffe0;
+      font-size: 1.38rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      margin-top: 0;
+      letter-spacing: 0.36px;
+      text-shadow:0 1px 4px #00ffe044;
+    }
+    ul { color: #b7fcf3cc; padding-left: 22px; }
+    li { margin-bottom: 7px; line-height: 1.6;}
+    strong { color: #06ffb6; }
+    p { color: #f1f1fc; line-height:1.64; }
+    @media (max-width: 720px) {
+      .container {padding:18px 2vw;}
+      .card {padding:20px 8px;}
+      .header h1 {font-size:1.5rem;}
+      .card {max-width:100%;}
     }
   </style>
 </head>
