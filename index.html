@@ -1,200 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sathya R - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --accent: #1e90ff;
-      --bg: #f4f8fb;
-      --card-bg: #fff;
-      --text-primary: #222;
-      --text-secondary: #555;
-      --radius: 14px;
-    }
-    body {
-      font-family: 'Montserrat', Arial, sans-serif;
-      background: var(--bg);
-      margin: 0;
-      color: var(--text-primary);
-      display: flex;
-      min-height: 100vh;
-    }
-    .sidebar {
-      background: var(--card-bg);
-      min-width: 260px;
-      padding: 32px 18px;
-      box-shadow: 2px 0 12px #0001;
-      border-radius: 0 var(--radius) var(--radius) 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .sidebar img {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      border: 4px solid var(--accent);
-      object-fit: cover;
-      margin-bottom: 18px;
-      box-shadow: 0 2px 8px #0002;
-    }
-    .sidebar h1 {
-      margin: 0 0 10px 0;
-      color: var(--accent);
-      font-size: 2rem;
-      letter-spacing: 1px;
-    }
-    .sidebar p {
-      margin: 6px 0;
-      font-size: 1rem;
-      color: var(--text-secondary);
-    }
-    .sidebar .contacts a {
-      color: var(--accent);
-      text-decoration: none;
-      display: block;
-      margin: 5px 0;
-      word-break: break-all;
-      font-weight: 700;
-      transition: color 0.2s;
-    }
-    .sidebar .contacts a:hover {
-      color: #0d65c9;
-      text-decoration: underline;
-    }
-    .content {
-      flex: 1;
-      padding: 36px 30px 36px 45px;
-      display: flex;
-      flex-direction: column;
-      gap: 34px;
-    }
-    section {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      box-shadow: 0 3px 18px #0001;
-      padding: 28px 28px 22px;
-      margin-bottom: 0;
-    }
-    section h2 {
-      color: var(--accent);
-      font-size: 1.4rem;
-      letter-spacing: 0.5px;
-      margin-bottom: 14px;
-      margin-top: 0;
-      border-left: 4px solid var(--accent);
-      padding-left: 10px;
-    }
-    section ul {
-      margin: 0;
-      padding-left: 22px;
-      color: var(--text-secondary);
-    }
-    section li {
-      margin-bottom: 7px;
-      line-height: 1.5;
-    }
-    .header-summary {
-      font-size: 1.07rem;
-      color: var(--text-secondary);
-      font-weight: 500;
-      margin-top: 9px;
-      margin-bottom: 0;
-    }
-    .skills-list {
-      display: flex;
-      gap: 36px;
-      flex-wrap: wrap;
-    }
-    .skills-list ul {
-      list-style: disc inside;
-      padding: 0;
-      margin: 0;
-    }
-    .exp-role {
-      color: var(--accent);
-      font-weight: bold;
-      font-size: 1.05rem;
-    }
-    @media (max-width: 900px) {
-      body {
-        flex-direction: column;
-      }
-      .sidebar {
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-start;
-        min-width: 0;
-        width: 100%;
-        border-radius: 0;
-        padding: 24px 16px;
-        box-shadow: none;
-      }
-      .sidebar img {
-        margin-right: 18px;
-        margin-bottom: 0;
-      }
-      .content {
-        padding: 22px 6px;
-      }
-    }
-    @media (max-width: 600px) {
-      .content, .sidebar {
-        padding: 14px 3vw;
-      }
-      section {
-        padding: 19px 7vw 13px;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sathya R - Portfolio</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #0077b6;
+    --background: #f9fafd;
+    --text-dark: #222;
+    --text-light: #555;
+    --card-bg: #fff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --radius: 12px;
+  }
+
+  * { box-sizing: border-box; }
+  body { font-family: 'Roboto', sans-serif; margin: 0; background: var(--background); color: var(--text-dark); }
+
+  .container {
+    max-width: 960px;
+    margin: 24px auto;
+    padding: 0 20px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  header h1 {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 2.8rem;
+    margin: 0;
+  }
+
+  .contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin: 12px 0 28px;
+  }
+
+  .contact-info a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  .contact-info a:hover {
+    border-color: var(--primary);
+  }
+
+  section {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 24px 30px;
+    margin-bottom: 32px;
+  }
+
+  section h2 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    border-left: 6px solid var(--primary);
+    padding-left: 14px;
+    margin-top: 0;
+    margin-bottom: 18px;
+  }
+
+  ul { padding-left: 20px; margin-top: 0; color: var(--text-light); }
+  li { margin-bottom: 8px; line-height: 1.5; }
+
+  .skills-list {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .skills-list ul { list-style: disc inside; margin: 0; padding: 0; }
+
+  .exp-role {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 640px) {
+    .skills-list { flex-direction: column; gap: 16px; }
+    .contact-info { flex-direction: column; gap: 12px; }
+  }
+</style>
 </head>
 <body>
-  <aside class="sidebar">
-    <!-- Add your photo in place of the src below if you want -->
-    <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Profile Photo"/>
-    <h1>Sathya R</h1>
-    <p class="header-summary">
-      Recent Information Technology graduate and Associate Engineer at Coforge, passionate about technology-driven problem solving and software development.
-    </p>
-    <div class="contacts">
-      <a href="mailto:rangarajsathya53@gmail.com">rangarajsathya53@gmail.com</a>
-      <a href="tel:+917358981171">+91 7358981171</a>
-      <a href="https://linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" rel="noopener">LinkedIn: Sathya R</a>
-      <a href="https://github.com/SATHYARANGARAJ53" target="_blank" rel="noopener">GitHub: Sathya R</a>
-      <p style="margin-top:10px;font-size:0.96rem;">7/108, Jadayampalayam, Mettupalayam<br>Coimbatore, India</p>
-    </div>
-  </aside>
-  <main class="content">
+  <div class="container">
+    <header>
+      <h1>Sathya R</h1>
+      <div class="contact-info">
+        <a href="mailto:rangarajsathya53@gmail.com">rangarajsathya53@gmail.com</a>
+        <a href="tel:+917358981171">+91 7358981171</a>
+        <a href="https://www.linkedin.com/in/sathya53/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/SATHYARANGARAJ53" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </header>
     <section>
-      <h2>Profile</h2>
-      <p>
-        Enthusiastic software developer skilled in Java, MERN, and web technologies, eager to deliver effective solutions and embrace new learning opportunities. Looking to contribute positively to the team and organizational success at Coforge.
-      </p>
+      <h2>Career Objective</h2>
+      <p>To leverage my foundational technical skills and adaptability as an Associate Engineer at Coforge, contributing to innovative projects while continuously learning and advancing in the field of software development. I aim to deliver results that support the company’s goals and foster both my professional and personal growth.</p>
     </section>
     <section>
       <h2>Education</h2>
-      <ul>
-        <li>
-          <span class="exp-role">Bachelor of Technology (Information Technology)</span>
-          <br>Karpagam Institute of Technology, Coimbatore, India
-          <br>CGPA: 8.11 (2021 – 2025)
-        </li>
-      </ul>
+      <p><strong>Bachelor of Technology (Information Technology)</strong><br />
+      Karpagam Institute of Technology, Coimbatore, India<br />
+      CGPA: 8.11 (2021 – 2025)
+      </p>
     </section>
     <section>
       <h2>Skills</h2>
       <div class="skills-list">
         <ul>
-          <li><strong>Technical:</strong> Java (Intermediate)</li>
+          <li><strong>Technical:</strong></li>
+          <li>Java (Intermediate)</li>
           <li>MERN Stack (Intermediate)</li>
           <li>Flask (Beginner)</li>
           <li>Android Development (Beginner)</li>
         </ul>
         <ul>
-          <li><strong>Soft:</strong> Problem Solving</li>
+          <li><strong>Soft:</strong></li>
+          <li>Problem Solving</li>
           <li>Collaboration</li>
           <li>Quick Learner</li>
         </ul>
@@ -203,16 +140,14 @@
     <section>
       <h2>Projects</h2>
       <ul>
-        <li>
-          <span class="exp-role">DocuQuest:</span>
+        <li><span class="exp-role">DocuQuest:</span>
           <ul>
             <li>Created a document-based chatbot using LangChain for PDF processing and OpenAI's API for natural language responses.</li>
             <li>Integrated chatbot with Telegram, enabling users to retrieve information directly from PDFs through their questions.</li>
             <li>Tools used: Python, LangChain, OpenAI API, Telegram Bot API</li>
           </ul>
         </li>
-        <li>
-          <span class="exp-role">Expense Tracker:</span>
+        <li><span class="exp-role">Expense Tracker:</span>
           <ul>
             <li>Led Full Stack development using MongoDB, Express.js, React, Node.js.</li>
             <li>Built platform to monitor, categorize, and visualize daily expenses, improving user financial awareness.</li>
@@ -234,28 +169,20 @@
     </section>
     <section>
       <h2>Experience</h2>
+      <p><span class="exp-role">Associate Engineer, Coforge</span> (July 2025 - Present)</p>
       <ul>
-        <li>
-          <span class="exp-role">Associate Engineer, Coforge</span> (July 2025 - Present)
-          <ul>
-            <li>Contributing to web application development projects within a collaborative team.</li>
-            <li>Applying industry-focused software practices and gaining extensive hands-on experience.</li>
-          </ul>
-        </li>
+        <li>Contributing to web application development projects within a collaborative team.</li>
+        <li>Applying industry-focused software practices and gaining extensive hands-on experience.</li>
       </ul>
     </section>
     <section>
       <h2>Internship</h2>
+      <p><span class="exp-role">CodSoft, Web Development</span> (20 July 2024 - 20 August 2024)</p>
       <ul>
-        <li>
-          <span class="exp-role">CodSoft, Web Development</span> (20 July 2024 - 20 August 2024)
-          <ul>
-            <li>Built responsive websites in HTML, CSS, JavaScript, focusing on performance and accessibility.</li>
-            <li>Collaborated with peers using Git and adopted Agile methodologies.</li>
-          </ul>
-        </li>
+        <li>Built responsive websites in HTML, CSS, JavaScript, focusing on performance and accessibility.</li>
+        <li>Collaborated with peers using Git and adopted Agile methodologies.</li>
       </ul>
     </section>
-  </main>
+  </div>
 </body>
 </html>
