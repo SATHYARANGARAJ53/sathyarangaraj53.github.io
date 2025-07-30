@@ -6,7 +6,35 @@
   <title>Sathya R - Portfolio</title>
   <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
   <style>
-    /* Background gradient animation */
+    /* Animated neon orb for extra motion */
+    .orb-container {
+      pointer-events: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .orb {
+      position: absolute;
+      top: 55vh; left: 48vw;
+      width: 170px; height: 170px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 55%, #00ffe0ee 60%, #1e38a9a6 82%, transparent 95%);
+      filter: blur(12px) brightness(1.15);
+      mix-blend-mode: lighten;
+      animation: orb-anim 11s infinite linear;
+      opacity: 0.5;
+    }
+    @keyframes orb-anim {
+      0% { transform: translateY(-12vh) translateX(-14vw) scale(1) rotate(0deg);}
+      15% { transform: translateY(6vh)  translateX(8vw) scale(1.17);}
+      28% { transform: translateY(-9vh) translateX(19vw) scale(0.82);}
+      48% { transform: translateY(16vh) translateX(-15vw) scale(1.18);}
+      69% { transform: translateY(16vh) translateX(25vw) scale(0.85);}
+      83% { transform: translateY(-6vh) translateX(-16vw) scale(1.12);}
+      100% { transform: translateY(-12vh) translateX(-14vw) scale(1) rotate(360deg);}
+    }
     body {
       min-height: 100vh;
       margin: 0;
@@ -28,6 +56,8 @@
       flex-direction: column;
       gap: 36px;
       align-items: center;
+      position: relative;
+      z-index: 2;
     }
     .header {
       text-align: center;
@@ -77,11 +107,10 @@
       letter-spacing: 0.13em;
       opacity: .8;
     }
-    /* GLASSMORPHISM CARD */
     .card {
       width: 100%;
       max-width: 740px;
-      background: rgba(28,32,45,0.68);
+      background: rgba(28,32,45,0.75);
       border-radius: 23px;
       padding: 36px 44px 30px 36px;
       box-shadow: 0 6px 38px 0 #070b125f, 0 1.5px 18px #00ffe049;
@@ -89,16 +118,10 @@
       position: relative;
       border: 1.6px solid rgba(61,255,232,0.21);
       margin-bottom: 0;
-      transition: transform .24s cubic-bezier(.22,1.08,.73,1.2), box-shadow 0.18s, border 0.18s;
-      will-change: transform;
-      cursor: pointer;
+      /* No hover/move transform anymore! */
+      transition: box-shadow 0.18s, border 0.18s;
+      will-change: box-shadow;
       z-index: 1;
-    }
-    .card:hover, .card:focus-within {
-      transform: translateY(-14px) scale(1.03) rotateZ(-1deg);
-      box-shadow: 0 14px 62px #00ffe07f, 0 2px 15px #00ffe017, 0 1.5px 6px #222d;
-      border: 1.6px solid #00ffe0cf;
-      z-index: 3;
     }
     h2 {
       color: #00ffe0;
@@ -122,6 +145,9 @@
   </style>
 </head>
 <body>
+  <div class="orb-container">
+    <div class="orb"></div>
+  </div>
   <div class="container">
     <div class="header">
       <h1>Sathya Rangaraj</h1>
@@ -134,14 +160,14 @@
       <div class="address">7/108, Jadayampalayam, Mettupalayam, Coimbatore, India</div>
     </div>
 
-    <div class="card" tabindex="0">
+    <div class="card">
       <h2>About Me</h2>
       <p>
         Recent graduate in Information Technology and current Associate Engineer at Coforge, passionate about problem-solving, continuous learning, and delivering impactful technology solutions. I thrive on collaboration and innovation, and I am eager to grow as a software developer.
       </p>
     </div>
 
-    <div class="card" tabindex="0">
+    <div class="card">
       <h2>Career Objective</h2>
       <p>
         To leverage my technical and interpersonal skills as an Associate Engineer at Coforge, 
@@ -150,7 +176,7 @@
       </p>
     </div>
 
-    <div class="card" tabindex="0">
+    <div class="card">
       <h2>Education</h2>
       <p>
         <strong>Bachelor of Technology (Information Technology)</strong><br>
@@ -159,7 +185,7 @@
       </p>
     </div>
 
-    <div class="card" tabindex="0">
+    <div class="card">
       <h2>Skills</h2>
       <ul>
         <li><strong>Technical:</strong> Java (Intermediate), MERN Stack (Intermediate), Flask (Beginner), Android Development (Beginner)</li>
@@ -167,7 +193,7 @@
       </ul>
     </div>
 
-    <div class="card" tabindex="0">
+    <div class="card">
       <h2>Projects</h2>
       <ul>
         <li>
@@ -188,7 +214,7 @@
       </ul>
     </div>
 
-    <div class="card" tabindex="0">
+    <div class="card">
       <h2>Certificates</h2>
       <ul>
         <li>Data Structures and Algorithms using Java - Infosys Springboard</li>
