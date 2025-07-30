@@ -4,120 +4,258 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sathya R - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --accent: #1e90ff;
+      --bg: #f4f8fb;
+      --card-bg: #fff;
+      --text-primary: #222;
+      --text-secondary: #555;
+      --radius: 14px;
+    }
     body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-      color: #333;
-      background-color: #f9f9f9;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--bg);
+      margin: 0;
+      color: var(--text-primary);
+      display: flex;
+      min-height: 100vh;
     }
-    h1, h2, h3 {
-      color: #0056b3;
+    .sidebar {
+      background: var(--card-bg);
+      min-width: 260px;
+      padding: 32px 18px;
+      box-shadow: 2px 0 12px #0001;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    h1 {
-      border-bottom: 2px solid #0056b3;
-      padding-bottom: 5px;
+    .sidebar img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      object-fit: cover;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 8px #0002;
     }
-    section {
-      margin-top: 20px;
-      background: #fff;
-      padding: 15px 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    .sidebar h1 {
+      margin: 0 0 10px 0;
+      color: var(--accent);
+      font-size: 2rem;
+      letter-spacing: 1px;
     }
-    ul {
-      padding-left: 20px;
+    .sidebar p {
+      margin: 6px 0;
+      font-size: 1rem;
+      color: var(--text-secondary);
     }
-    a {
-      color: #0056b3;
+    .sidebar .contacts a {
+      color: var(--accent);
       text-decoration: none;
+      display: block;
+      margin: 5px 0;
+      word-break: break-all;
+      font-weight: 700;
+      transition: color 0.2s;
     }
-    a:hover {
+    .sidebar .contacts a:hover {
+      color: #0d65c9;
       text-decoration: underline;
     }
-    .contact-info p {
+    .content {
+      flex: 1;
+      padding: 36px 30px 36px 45px;
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+    }
+    section {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: 0 3px 18px #0001;
+      padding: 28px 28px 22px;
+      margin-bottom: 0;
+    }
+    section h2 {
+      color: var(--accent);
+      font-size: 1.4rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+      margin-top: 0;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+    section ul {
+      margin: 0;
+      padding-left: 22px;
+      color: var(--text-secondary);
+    }
+    section li {
+      margin-bottom: 7px;
+      line-height: 1.5;
+    }
+    .header-summary {
+      font-size: 1.07rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      margin-top: 9px;
+      margin-bottom: 0;
+    }
+    .skills-list {
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+    .skills-list ul {
+      list-style: disc inside;
+      padding: 0;
       margin: 0;
     }
-    .skills ul {
-      list-style-type: circle;
+    .exp-role {
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.05rem;
+    }
+    @media (max-width: 900px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        min-width: 0;
+        width: 100%;
+        border-radius: 0;
+        padding: 24px 16px;
+        box-shadow: none;
+      }
+      .sidebar img {
+        margin-right: 18px;
+        margin-bottom: 0;
+      }
+      .content {
+        padding: 22px 6px;
+      }
+    }
+    @media (max-width: 600px) {
+      .content, .sidebar {
+        padding: 14px 3vw;
+      }
+      section {
+        padding: 19px 7vw 13px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Sathya Rangaraj</h1>
-  <section class="contact-info">
-    <p><strong>Email:</strong> <a href="mailto:rangarajsathya53@gmail.com">rangarajsathya53@gmail.com</a></p>
-    <p><strong>Phone:</strong> +91 7358981171</p>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sathya53/" target="_blank" rel="noopener">Sathya R</a></p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/SATHYARANGARAJ53" target="_blank" rel="noopener">Sathya R</a></p>
-    <p><strong>Address:</strong> 7/108, Jadayampalayam, Mettupalayam, Coimbatore, India</p>
-  </section>
-
-  <section class="about-me">
-    <h2>About Me</h2>
-    <p>Recent graduate in Information Technology and current Associate Engineer at Coforge, passionate about problem-solving, continuous learning, and delivering impactful technology solutions. I thrive on collaboration and innovation, and I am eager to grow as a software developer.</p>
-  </section>
-
-  <section class="career-objective">
-    <h2>Career Objective</h2>
-    <p>To leverage my foundational technical skills and adaptability as an Associate Engineer at Coforge, contributing to innovative projects while continuously learning and advancing in the field of software development. I aim to deliver results that support the company’s goals and foster both my professional and personal growth.</p>
-  </section>
-
-  <section class="education">
-    <h2>Education</h2>
-    <p><strong>Bachelor of Technology (Information Technology)</strong><br />
-      Karpagam Institute of Technology, Coimbatore, India<br />
-      CGPA: 8.11 (2021 – 2025)
+  <aside class="sidebar">
+    <!-- Add your photo in place of the src below if you want -->
+    <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Profile Photo"/>
+    <h1>Sathya R</h1>
+    <p class="header-summary">
+      Recent Information Technology graduate and Associate Engineer at Coforge, passionate about technology-driven problem solving and software development.
     </p>
-  </section>
-
-  <section class="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Technical:</strong> Java (Intermediate), MERN Stack (Intermediate), Flask (Beginner), Android Development (Beginner)</li>
-      <li><strong>Soft:</strong> Problem Solving, Collaboration, Quick Learner</li>
-    </ul>
-  </section>
-
-  <section class="projects">
-    <h2>Projects</h2>
-    <h3>DocuQuest</h3>
-    <ul>
-      <li>Created a document-based chatbot using LangChain for PDF processing and OpenAI's API for natural language responses.</li>
-      <li>Integrated chatbot with Telegram, enabling users to retrieve information directly from PDFs through their questions.</li>
-      <li>Enhanced user experience by providing concise answers from large documents in real-time.</li>
-      <li>Tools: Python, LangChain, OpenAI API, Telegram Bot API</li>
-    </ul>
-
-    <h3>Expense Tracker</h3>
-    <ul>
-      <li>Led development as Full Stack Developer using MongoDB, Express.js, React, Node.js.</li>
-      <li>Enabled users to monitor daily expenses, categorize spending, and visualize trends for improved financial management.</li>
-      <li>Worked with Git for version control and coordinated with testers for QA.</li>
-    </ul>
-  </section>
-
-  <section class="certificates">
-    <h2>Certificates</h2>
-    <ul>
-      <li>Data Structures and Algorithms using Java - Infosys Springboard</li>
-      <li>Java (Basic) - Hackerrank</li>
-      <li>Responsive Web Design - FreeCodeCamp</li>
-      <li>React - Coursera (Meta)</li>
-      <li>Problem Solving (Basic) - Hackerrank</li>
-      <li>Java Full Stack - Wipro TalentNext</li>
-    </ul>
-  </section>
-
-  <section class="internship">
-    <h2>Internship</h2>
-    <p><strong>CodSoft, Web Development</strong> (20 July 2024 - 20 August 2024)</p>
-    <ul>
-      <li>Built responsive websites using HTML, CSS, JavaScript; optimized for performance and accessibility.</li>
-      <li>Collaborated with peers using Git and attended Agile team meetings.</li>
-    </ul>
-  </section>
+    <div class="contacts">
+      <a href="mailto:rangarajsathya53@gmail.com">rangarajsathya53@gmail.com</a>
+      <a href="tel:+917358981171">+91 7358981171</a>
+      <a href="https://linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" rel="noopener">LinkedIn: Sathya R</a>
+      <a href="https://github.com/SATHYARANGARAJ53" target="_blank" rel="noopener">GitHub: Sathya R</a>
+      <p style="margin-top:10px;font-size:0.96rem;">7/108, Jadayampalayam, Mettupalayam<br>Coimbatore, India</p>
+    </div>
+  </aside>
+  <main class="content">
+    <section>
+      <h2>Profile</h2>
+      <p>
+        Enthusiastic software developer skilled in Java, MERN, and web technologies, eager to deliver effective solutions and embrace new learning opportunities. Looking to contribute positively to the team and organizational success at Coforge.
+      </p>
+    </section>
+    <section>
+      <h2>Education</h2>
+      <ul>
+        <li>
+          <span class="exp-role">Bachelor of Technology (Information Technology)</span>
+          <br>Karpagam Institute of Technology, Coimbatore, India
+          <br>CGPA: 8.11 (2021 – 2025)
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <ul>
+          <li><strong>Technical:</strong> Java (Intermediate)</li>
+          <li>MERN Stack (Intermediate)</li>
+          <li>Flask (Beginner)</li>
+          <li>Android Development (Beginner)</li>
+        </ul>
+        <ul>
+          <li><strong>Soft:</strong> Problem Solving</li>
+          <li>Collaboration</li>
+          <li>Quick Learner</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <span class="exp-role">DocuQuest:</span>
+          <ul>
+            <li>Created a document-based chatbot using LangChain for PDF processing and OpenAI's API for natural language responses.</li>
+            <li>Integrated chatbot with Telegram, enabling users to retrieve information directly from PDFs through their questions.</li>
+            <li>Tools used: Python, LangChain, OpenAI API, Telegram Bot API</li>
+          </ul>
+        </li>
+        <li>
+          <span class="exp-role">Expense Tracker:</span>
+          <ul>
+            <li>Led Full Stack development using MongoDB, Express.js, React, Node.js.</li>
+            <li>Built platform to monitor, categorize, and visualize daily expenses, improving user financial awareness.</li>
+            <li>Used Git for version control, collaborated with testers on QA.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>Certificates</h2>
+      <ul>
+        <li>Data Structures and Algorithms using Java - Infosys Springboard</li>
+        <li>Java (Basic) - Hackerrank</li>
+        <li>Responsive Web Design - FreeCodeCamp</li>
+        <li>React - Coursera (Meta)</li>
+        <li>Problem Solving (Basic) - Hackerrank</li>
+        <li>Java Full Stack - Wipro TalentNext</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Experience</h2>
+      <ul>
+        <li>
+          <span class="exp-role">Associate Engineer, Coforge</span> (July 2025 - Present)
+          <ul>
+            <li>Contributing to web application development projects within a collaborative team.</li>
+            <li>Applying industry-focused software practices and gaining extensive hands-on experience.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>Internship</h2>
+      <ul>
+        <li>
+          <span class="exp-role">CodSoft, Web Development</span> (20 July 2024 - 20 August 2024)
+          <ul>
+            <li>Built responsive websites in HTML, CSS, JavaScript, focusing on performance and accessibility.</li>
+            <li>Collaborated with peers using Git and adopted Agile methodologies.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </main>
 </body>
 </html>
