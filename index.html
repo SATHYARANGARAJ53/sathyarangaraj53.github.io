@@ -1,162 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sathya R - Portfolio</title>
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --primary: #0077b6;
-    --background: #f9fafd;
-    --text-dark: #222;
-    --text-light: #555;
-    --card-bg: #fff;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    --radius: 12px;
-  }
-
-  * { box-sizing: border-box; }
-  body { font-family: 'Roboto', sans-serif; margin: 0; background: var(--background); color: var(--text-dark); }
-
-  .container {
-    max-width: 960px;
-    margin: 24px auto;
-    padding: 0 20px;
-  }
-
-  header {
-    text-align: center;
-    margin-bottom: 32px;
-  }
-
-  header h1 {
-    color: var(--primary);
-    font-weight: 700;
-    font-size: 2.8rem;
-    margin: 0;
-  }
-
-  .contact-info {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    flex-wrap: wrap;
-    margin: 12px 0 28px;
-  }
-
-  .contact-info a {
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 700;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.3s ease;
-  }
-
-  .contact-info a:hover {
-    border-color: var(--primary);
-  }
-
-  section {
-    background: var(--card-bg);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 24px 30px;
-    margin-bottom: 32px;
-  }
-
-  section h2 {
-    color: var(--primary);
-    font-size: 1.8rem;
-    border-left: 6px solid var(--primary);
-    padding-left: 14px;
-    margin-top: 0;
-    margin-bottom: 18px;
-  }
-
-  ul { padding-left: 20px; margin-top: 0; color: var(--text-light); }
-  li { margin-bottom: 8px; line-height: 1.5; }
-
-  .skills-list {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-
-  .skills-list ul { list-style: disc inside; margin: 0; padding: 0; }
-
-  .exp-role {
-    font-weight: 700;
-    color: var(--primary);
-    font-size: 1.1rem;
-  }
-
-  @media (max-width: 640px) {
-    .skills-list { flex-direction: column; gap: 16px; }
-    .contact-info { flex-direction: column; gap: 12px; }
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sathya R - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #00ffe0;
+      --bg: #111216;
+      --card-bg: #181921;
+      --text: #f4f6fa;
+      --text-soft: #a0aec0;
+      --radius: 18px;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', Arial, sans-serif;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 8vw 70px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      min-height: 100vh;
+      align-items: center;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .header h1 {
+      margin: 0 0 4px;
+      font-weight: 700;
+      font-size: 2.3rem;
+      letter-spacing: 0.4px;
+    }
+    .contact-row {
+      display: flex;
+      gap: 22px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 5px 0;
+    }
+    .contact-row a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.15s, filter 0.2s;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      font-size:1rem;
+    }
+    .contact-row a:hover {
+      color: #fff;
+      filter: brightness(1.4);
+      text-decoration: underline;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 30px 36px;
+      box-shadow: 0 5px 24px 0 #0007, 0 1.5px 9px #00ffe033;
+      margin-bottom: 0;
+      transition: transform 0.22s cubic-bezier(.23,1.07,.74,1.19), box-shadow 0.18s;
+      will-change: transform;
+      cursor: pointer;
+      position: relative;
+    }
+    .card:hover, .card:focus-within {
+      transform: translateY(-10px) scale(1.035) rotateZ(-1deg);
+      box-shadow: 0 14px 48px 0 #00ffe055, 0 1.5px 13px #00ffe01a, 0 1px 1.5px #222c;
+      z-index: 2;
+    }
+    h2 {
+      color: var(--accent);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 13px;
+      margin-top: 0;
+      letter-spacing: 0.3px;
+    }
+    ul { color: var(--text-soft); padding-left: 21px; }
+    li { margin-bottom: 6px; line-height: 1.5; }
+    strong { color: var(--accent);}
+    .address {color: var(--text-soft); font-size:1rem; text-align:center; margin:18px 0 0 0;}
+    @media (max-width: 640px) {
+      .container {padding:20px 3vw;}
+      .card {padding:18px 10px;}
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1>Sathya R</h1>
-      <div class="contact-info">
-        <a href="mailto:rangarajsathya53@gmail.com">rangarajsathya53@gmail.com</a>
-        <a href="tel:+917358981171">+91 7358981171</a>
-        <a href="https://www.linkedin.com/in/sathya53/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/SATHYARANGARAJ53" target="_blank" rel="noopener">GitHub</a>
+    <div class="header">
+      <h1>Sathya Rangaraj</h1>
+      <div class="contact-row">
+        <a href="mailto:rangarajsathya53@gmail.com" title="Email">Email</a>
+        <a href="tel:+917358981171" title="Phone">+91 7358981171</a>
+        <a href="https://www.linkedin.com/in/sathya53/" target="_blank" rel="noopener" title="Connect on LinkedIn">LinkedIn: Sathya R</a>
+        <a href="https://github.com/SATHYARANGARAJ53" target="_blank" rel="noopener" title="GitHub Profile">GitHub: Sathya R</a>
       </div>
-    </header>
-    <section>
-      <h2>Career Objective</h2>
-      <p>To leverage my foundational technical skills and adaptability as an Associate Engineer at Coforge, contributing to innovative projects while continuously learning and advancing in the field of software development. I aim to deliver results that support the company’s goals and foster both my professional and personal growth.</p>
-    </section>
-    <section>
-      <h2>Education</h2>
-      <p><strong>Bachelor of Technology (Information Technology)</strong><br />
-      Karpagam Institute of Technology, Coimbatore, India<br />
-      CGPA: 8.11 (2021 – 2025)
+      <div class="address">7/108, Jadayampalayam, Mettupalayam, Coimbatore, India</div>
+    </div>
+
+    <div class="card" tabindex="0">
+      <h2>About Me</h2>
+      <p>
+        Recent graduate in Information Technology and current Associate Engineer at Coforge, passionate about problem-solving, continuous learning, and delivering impactful technology solutions. I thrive on collaboration and innovation, and I am eager to grow as a software developer.
       </p>
-    </section>
-    <section>
+    </div>
+
+    <div class="card" tabindex="0">
+      <h2>Career Objective</h2>
+      <p>
+        To leverage my technical and interpersonal skills as an Associate Engineer at Coforge, 
+        contributing fresh ideas to innovative projects. I seek to build expertise in software engineering 
+        while supporting my company's goals and pursuing personal and professional growth.
+      </p>
+    </div>
+
+    <div class="card" tabindex="0">
+      <h2>Education</h2>
+      <p>
+        <strong>Bachelor of Technology (Information Technology)</strong><br>
+        Karpagam Institute of Technology, Coimbatore, India<br>
+        CGPA: 8.11 (2021 – 2025)
+      </p>
+    </div>
+
+    <div class="card" tabindex="0">
       <h2>Skills</h2>
-      <div class="skills-list">
-        <ul>
-          <li><strong>Technical:</strong></li>
-          <li>Java (Intermediate)</li>
-          <li>MERN Stack (Intermediate)</li>
-          <li>Flask (Beginner)</li>
-          <li>Android Development (Beginner)</li>
-        </ul>
-        <ul>
-          <li><strong>Soft:</strong></li>
-          <li>Problem Solving</li>
-          <li>Collaboration</li>
-          <li>Quick Learner</li>
-        </ul>
-      </div>
-    </section>
-    <section>
+      <ul>
+        <li><strong>Technical:</strong> Java (Intermediate), MERN Stack (Intermediate), Flask (Beginner), Android Development (Beginner)</li>
+        <li><strong>Soft:</strong> Problem Solving, Collaboration, Quick Learner</li>
+      </ul>
+    </div>
+
+    <div class="card" tabindex="0">
       <h2>Projects</h2>
       <ul>
-        <li><span class="exp-role">DocuQuest:</span>
+        <li>
+          <strong>DocuQuest:</strong>
           <ul>
-            <li>Created a document-based chatbot using LangChain for PDF processing and OpenAI's API for natural language responses.</li>
-            <li>Integrated chatbot with Telegram, enabling users to retrieve information directly from PDFs through their questions.</li>
-            <li>Tools used: Python, LangChain, OpenAI API, Telegram Bot API</li>
+            <li>Document-based chatbot using LangChain for PDF processing and OpenAI API for natural language answers.</li>
+            <li>Telegram integration for user interaction and instant information retrieval from PDFs.</li>
+            <li>Tech: Python, LangChain, OpenAI API, Telegram Bot API</li>
           </ul>
         </li>
-        <li><span class="exp-role">Expense Tracker:</span>
+        <li>
+          <strong>Expense Tracker:</strong>
           <ul>
-            <li>Led Full Stack development using MongoDB, Express.js, React, Node.js.</li>
-            <li>Built platform to monitor, categorize, and visualize daily expenses, improving user financial awareness.</li>
-            <li>Used Git for version control, collaborated with testers on QA.</li>
+            <li>Full Stack web app using MongoDB, Express.js, React, Node.js for daily expense tracking and financial insights.</li>
+            <li>Used Git for version control, collaborated with testers for QA.</li>
           </ul>
         </li>
       </ul>
-    </section>
-    <section>
+    </div>
+
+    <div class="card" tabindex="0">
       <h2>Certificates</h2>
       <ul>
         <li>Data Structures and Algorithms using Java - Infosys Springboard</li>
@@ -166,23 +171,7 @@
         <li>Problem Solving (Basic) - Hackerrank</li>
         <li>Java Full Stack - Wipro TalentNext</li>
       </ul>
-    </section>
-    <section>
-      <h2>Experience</h2>
-      <p><span class="exp-role">Associate Engineer, Coforge</span> (July 2025 - Present)</p>
-      <ul>
-        <li>Contributing to web application development projects within a collaborative team.</li>
-        <li>Applying industry-focused software practices and gaining extensive hands-on experience.</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Internship</h2>
-      <p><span class="exp-role">CodSoft, Web Development</span> (20 July 2024 - 20 August 2024)</p>
-      <ul>
-        <li>Built responsive websites in HTML, CSS, JavaScript, focusing on performance and accessibility.</li>
-        <li>Collaborated with peers using Git and adopted Agile methodologies.</li>
-      </ul>
-    </section>
+    </div>
   </div>
 </body>
 </html>
