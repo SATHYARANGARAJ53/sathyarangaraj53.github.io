@@ -1,202 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sathya R - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
+      background: linear-gradient(135deg, #161a2e 0%, #233860 80%);
       min-height: 100vh;
-      background: #000;
-      font-family: "Poppins", Arial, sans-serif;
+      font-family: 'Poppins', Arial, sans-serif;
       color: #e2e7ef;
-      margin: 0;
-      line-height: 1.75;
-      font-size: 18px;
-      letter-spacing: 0.01em;
     }
-    .container {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 48px 16px 72px;
-      display: flex;
-      flex-direction: column;
-      gap: 36px;
-      align-items: center;
-      z-index: 2;
-      position: relative;
+    .navbar, .card {
+      background: rgba(30, 41, 78, .97) !important;
     }
-    .header {
+    .profile-img {
+      width: 165px;
+      height: 165px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid #61eafe90;
+      box-shadow: 0 8px 32px #44cfff5b;
+      background: #fff;
+      margin-bottom:15px;
+    }
+    .top-header {
       text-align: center;
-      margin-bottom: 20px;
-      letter-spacing: 0.04em;
+      padding-bottom: 30px;
+      padding-top: 55px;
     }
-    .header h1 {
-      margin: 0 0 8px;
-      font-size: 2.7rem;
-      font-weight: 700;
+    .top-header h1 {
       color: #fff;
-      letter-spacing: 0.04em;
-      text-shadow: 0 6px 30px #61eafe30, 0 1px 0 #08092127;
-    }
-    .contact-row {
-      display: flex;
-      gap: 26px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 10px 0 0 0;
-    }
-    .contact-row a {
-      color: #5ebefd;
-      font-weight: 600;
-      background: rgba(54,71,114,0.13);
-      padding: 8px 18px;
-      border-radius: 22px;
-      letter-spacing: 0.06em;
-      font-size: 1.05rem;
-      text-decoration: none;
-      border: 1.2px solid transparent;
-      margin-bottom: 2px;
-      transition: color 0.16s, background 0.14s, border 0.15s;
-      box-shadow: 0px 4px 16px #437acf18;
-      position: relative;
-      z-index: 2;
-    }
-    .contact-row a:hover {
-      color: #222;
-      background: #69c8fa;
-      border: 1.2px solid #7bd3fa;
-      text-decoration: underline;
+      font-size: 2.8rem;
       font-weight: 700;
+      text-shadow: 0 8px 32px #61eafe40, 0 1px 0 #0a234a33;
+      margin: 17px 0 5px 0;
+    }
+    .subtitle { color: #8fd9f7; font-size:1.2rem; }
+    .contact-links a {
+      margin: 0 7px 8px 0;
+      text-decoration: none;
+      color: #54c8ff;
+      background: rgba(60,180,250,0.12);
+      border: 1px solid rgba(75,210,250,0.17);
+      padding: 7px 18px;
+      border-radius: 21px;
+      font-weight: 600;
+      transition: background 0.2s, color 0.2s;
+      display:inline-block;
+    }
+    .contact-links a:hover, .contact-links a:focus {
+      color: #173956;
+      background: #69c8fa;
+    }
+    .section-title {
+      color: #61eafe;
+      font-weight: 700;
+      border-left: 5px solid #36c9b0;
+      padding-left: 10px;
+      margin-bottom: 18px;
+      letter-spacing: .02em;
+    }
+    ul {padding-left:1.4em;}
+    strong {color: #ffd984;}
+    .card {
+      border-radius: 17px !important; 
+      box-shadow: 0 8px 32px #223b7845 !important;
+      margin-bottom: 27px;
+      border: 1.5px solid #3fa8dd35 !important;
     }
     .address {
       color: #bdd4ef;
-      font-size:1rem;
-      text-align:center;
+      font-size:1.04rem;
       margin:16px 0 0 0;
-      letter-spacing: 0.11em;
-      opacity: .85;
-    }
-    .card {
-      width: 100%;
-      max-width: 750px;
-      background: rgba(38, 43, 61, 0.86);
-      border-radius: 21px;
-      padding: 36px 40px 28px 36px;
-      box-shadow: 0 8px 36px #25396845, 0 1px 18px #87bfff18;
-      border: 1.5px solid rgba(94,190,253,0.17);
-      margin: 22px 0 32px 0;
-    }
-    h2 {
-      color: #7bd3fa;
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 13px;
-      margin-top: 0;
-      letter-spacing: 0.03em;
-      border-left: 5px solid #36c9b0;
-      padding-left: 12px;
+      letter-spacing: 0.09em;
+      opacity: .83;
     }
     .project-title {
-      color: #7bd3fa;
-      font-weight: 700;
-      font-size: 1.12em;
-      margin-bottom: 2px;
-      display: inline-block;
+      color: #7bd3fa; font-weight:600;
+      font-size:1.12em; 
+      margin-bottom:2px; 
+      display:inline-block;
     }
-    ul { color: #c8e4fa; padding-left: 22px;}
-    li { margin-bottom: 6px; line-height: 1.64;}
-    strong { color: #ffd784; font-weight:600; font-size:1.05em; letter-spacing:0.02em;}
-    p { color: #f4f8fc; line-height:1.74;}
-    @media (max-width: 700px) {
-      .container {padding:18px 4vw;}
-      .card {padding:18px 8px;}
-      .header h1 {font-size:1.5rem;}
-      .card {max-width:100%;}
-      h2 {font-size:1.2rem;}
+    @media (max-width: 600px) {
+      .top-header h1 {font-size: 1.5rem;}
+      .top-header {padding-top:24px;}
+      .profile-img {width:100px; height:100px;}
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>Sathya Rangaraj</h1>
-      <div class="contact-row">
-        <a href="https://mail.google.com/mail/?view=cm&to=rangarajsathya53@gmail.com" title="Email">Email</a>
-        <a href="+917358981171" title="Phone">+91 7358981171</a>
-        <a href="https://www.linkedin.com/in/sathya53/" target="_blank" rel="noopener" title="Connect on LinkedIn">LinkedIn: Sathya R</a>
-        <a href="https://github.com/SATHYARANGARAJ53" target="_blank" rel="noopener" title="GitHub Profile">GitHub: Sathya R</a>
+  <nav class="navbar navbar-expand-lg navbar-dark px-2">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Sathya R</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsR" aria-controls="navbarsR" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsR">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+        </ul>
       </div>
-      <div class="address">7/108, Jadayampalayam, Mettupalayam, Coimbatore, India</div>
     </div>
+  </nav>
 
-    <div class="card">
-      <h2>About Me</h2>
+  <div class="container">
+    <!-- Hero Section with Photo -->
+    <div class="top-header" id="home">
+      <img src="sathya.jpg" alt="Sathya Rangaraj Photo" class="profile-img shadow-lg">
+      <!-- Replace the above src with your own photo or link (e.g. src="https://example.com/myphoto.jpg") -->
+      <h1>Sathya Rangaraj</h1>
+      <div class="subtitle mb-2">Associate Engineer @ Coforge | Aspiring Full Stack Developer</div>
+      <div class="contact-links">
+        <a href="mailto:rangarajsathya53@gmail.com" target="_blank">Email</a>
+        <a href="tel:+917358981171">📞 +91 7358981171</a>
+        <a href="https://www.linkedin.com/in/sathya53/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/SATHYARANGARAJ53" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="address">
+        7/108, Jadayampalayam, Mettupalayam, Coimbatore, India
+      </div>
+    </div>
+    <!-- About -->
+    <div class="card p-4" id="about">
+      <h2 class="section-title">About Me</h2>
       <p>
-        Recent graduate in Information Technology and current Associate Engineer at Coforge, passionate about problem-solving, continuous learning, and delivering impactful technology solutions. I thrive on collaboration and innovation, and I am eager to grow as a software developer.
+        Recent graduate in Information Technology and current <strong>Associate Engineer at Coforge</strong>, passionate about problem-solving, continuous learning, and delivering impactful technology solutions. I thrive on collaboration and innovation, looking to grow as a software developer.
       </p>
     </div>
-
-    <div class="card">
-      <h2>Career Objective</h2>
+    <!-- Career Objective -->
+    <div class="card p-4">
+      <h2 class="section-title">Career Objective</h2>
       <p>
-        To leverage my technical and interpersonal skills as an Associate Engineer at Coforge,
-        contributing fresh ideas to innovative projects. I seek to build expertise in software engineering
-        while supporting my company's goals and pursuing personal and professional growth.
+        To leverage my technical and interpersonal skills as an <strong>Associate Engineer at Coforge</strong>, contributing fresh ideas to innovative projects. I seek to build expertise in software engineering while supporting my company's goals and pursuing personal and professional growth.
       </p>
     </div>
-
-    <div class="card">
-      <h2>Education</h2>
+    <!-- Education -->
+    <div class="card p-4" id="education">
+      <h2 class="section-title">Education</h2>
       <p>
-        Bachelor of Technology (Information Technology)<br>
+        <strong>Bachelor of Technology (Information Technology)</strong><br>
         Karpagam Institute of Technology, Coimbatore, India<br>
         CGPA: 8.11 (2021 – 2025)
       </p>
     </div>
-
-    <div class="card">
-      <h2>Skills</h2>
+    <!-- Skills -->
+    <div class="card p-4" id="skills">
+      <h2 class="section-title">Skills</h2>
       <ul>
-        <li>Technical: Java (Intermediate), MERN Stack (Intermediate), Flask (Beginner), Android Development (Beginner)</li>
-        <li>Soft: Problem Solving, Collaboration, Quick Learner</li>
+        <li><strong>Technical:</strong> Java (Intermediate), MERN Stack (Intermediate), Flask (Beginner), Android Development (Beginner)</li>
+        <li><strong>Soft:</strong> Problem Solving, Collaboration, Quick Learner</li>
       </ul>
     </div>
-
-    <div class="card">
-      <h2>Projects</h2>
+    <!-- Projects -->
+    <div class="card p-4" id="projects">
+      <h2 class="section-title">Projects</h2>
       <ul>
         <li>
           <span class="project-title">DocuQuest:</span>
           <ul>
             <li>Document-based chatbot using LangChain for PDF processing and OpenAI API for natural language answers.</li>
-            <li>Telegram integration for user interaction and instant information retrieval from PDFs.</li>
-            <li>Tech: Python, LangChain, OpenAI API, Telegram Bot API</li>
+            <li>Telegram integration for instant PDF queries.</li>
+            <li><strong>Tech:</strong> Python, LangChain, OpenAI API, Telegram Bot API</li>
           </ul>
         </li>
         <li>
           <span class="project-title">Expense Tracker:</span>
           <ul>
-            <li>Full Stack web app using MongoDB, Express.js, React, Node.js for daily expense tracking and financial insights.</li>
-            <li>Used Git for version control, collaborated with testers for QA.</li>
+            <li>Full Stack app for daily expense tracking and insights.</li>
+            <li>Used MongoDB, Express.js, React, Node.js and Git for version control.</li>
           </ul>
         </li>
         <li>
-      <span class="project-title">Medicine Inventory Management & Forecasting System:</span>
-      <ul>
-        <li>Developed a robust web application for clinics to manage, track, and audit medicine inventory with real-time CRUD operations.</li>
-        <li>Integrated advanced AI forecasting models (LSTM, Prophet to predict weekly stock requirements, reducing wastage and preventing shortages.</li>
-        <li>Implemented CHAID-based decision rules to automatically alert users about low or expiring medicines, ensuring timely replenishments and patient safety.</li>
-        <li>Designed user-specific inventory access and a supply chain module enabling efficient inter-clinic stock transfer requests and approvals.</li>
-        <li>Tech Stack: Python, Django, LSTM, Prophet, CHAID</li>
-      </ul>
-      </li>
+          <span class="project-title">Medicine Inventory Management & Forecasting System:</span>
+          <ul>
+            <li>Web app for clinics; manages and audits inventory in real time.</li>
+            <li>Integrated LSTM and Prophet forecasting to predict stock needs.</li>
+            <li>CHAID-based rules alerting for low/expiring medicines.</li>
+            <li>Inter-clinic stock transfer and approval system.</li>
+            <li><strong>Tech:</strong> Python, Django, LSTM, Prophet, CHAID</li>
+          </ul>
+        </li>
       </ul>
     </div>
-
-    <div class="card">
-      <h2>Certificates</h2>
+    <!-- Certificates -->
+    <div class="card p-4" id="certificates">
+      <h2 class="section-title">Certificates</h2>
       <ul>
         <li>Data Structures and Algorithms using Java - Infosys Springboard</li>
         <li>Java (Basic) - Hackerrank</li>
@@ -207,5 +204,7 @@
       </ul>
     </div>
   </div>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
