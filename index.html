@@ -8,9 +8,9 @@
   <style>
     body {
       min-height: 100vh;
-      background: white;
+      background: #fff;
       font-family: "Poppins", Arial, sans-serif;
-      color: #e2e7ef;
+      color: #25334b;
       margin: 0;
       line-height: 1.75;
       font-size: 18px;
@@ -32,13 +32,24 @@
       margin-bottom: 20px;
       letter-spacing: 0.04em;
     }
+    /* Uncomment below to add your profile image (replace profile.jpg as needed) */
+    /*
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #5ebefd;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 8px #5ebefd33;
+      object-fit: cover;
+    }
+    */
     .header h1 {
       margin: 0 0 8px;
       font-size: 2.7rem;
       font-weight: 700;
-      color: black;
+      color: #121212;
       letter-spacing: 0.04em;
-      text-shadow: 0 6px 30px #61eafe30, 0 1px 0 #08092127;
     }
     .contact-row {
       display: flex;
@@ -50,7 +61,7 @@
     .contact-row a {
       color: #5ebefd;
       font-weight: 600;
-      background: rgba(54,71,114,0.13);
+      background: rgba(54, 71, 114, 0.08);
       padding: 8px 18px;
       border-radius: 22px;
       letter-spacing: 0.06em;
@@ -59,79 +70,71 @@
       border: 1.2px solid transparent;
       margin-bottom: 2px;
       transition: color 0.16s, background 0.14s, border 0.15s;
-      box-shadow: 0px 4px 16px #437acf18;
+      box-shadow: 0px 4px 10px #5ebefd18;
       position: relative;
       z-index: 2;
     }
     .contact-row a:hover {
-      color: #222;
-      background: #69c8fa;
-      border: 1.2px solid #7bd3fa;
+      color: #fff;
+      background: #5ebefd;
+      border: 1.2px solid #5ebefd;
       text-decoration: underline;
       font-weight: 700;
     }
     .address {
-      color: #bdd4ef;
+      color: #6ea4c6;
       font-size:1rem;
       text-align:center;
       margin:16px 0 0 0;
       letter-spacing: 0.11em;
-      opacity: .85;
+      opacity: .95;
     }
     .card {
       width: 100%;
       max-width: 750px;
-      background: rgba(38, 43, 61, 0.86);
+      background: #fff;
       border-radius: 21px;
       padding: 36px 40px 28px 36px;
-      box-shadow: 0 8px 36px #25396845, 0 1px 18px #87bfff18;
-      border: 1.5px solid rgba(94,190,253,0.17);
+      box-shadow: 0 8px 26px #5ebefd12, 0 1px 8px #8fbee818;
+      border: 1.5px solid #e6ecf5;
       margin: 22px 0 32px 0;
     }
     h2 {
-      color: #7bd3fa;
+      color: #5ebefd;
       font-size: 1.6rem;
       font-weight: 700;
       margin-bottom: 13px;
       margin-top: 0;
       letter-spacing: 0.03em;
-      border-left: 5px solid #36c9b0;
+      border-left: 5px solid #5ebefd;
       padding-left: 12px;
+      background: none;
     }
     .project-title {
-      color: #7bd3fa;
+      color: #5ebefd;
       font-weight: 700;
       font-size: 1.12em;
       margin-bottom: 2px;
       display: inline-block;
     }
-    ul { color: #c8e4fa; padding-left: 22px;}
+    ul { color: #25334b; padding-left: 22px;}
     li { margin-bottom: 6px; line-height: 1.64;}
-    strong { color: #ffd784; font-weight:600; font-size:1.05em; letter-spacing:0.02em;}
-    p { color: #f4f8fc; line-height:1.74;}
+    strong { color: #fcb73a; font-weight:600; font-size:1.05em; letter-spacing:0.02em;}
+    p { color: #25334b; line-height:1.74;}
     @media (max-width: 700px) {
       .container {padding:18px 4vw;}
       .card {padding:18px 8px;}
-      .header h1 {font-size:1.5rem;}
+      .header h1 {font-size:1.6rem;}
       .card {max-width:100%;}
       h2 {font-size:1.2rem;}
     }
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 80%;
-      border: 3px solid #36c9b0;
-      margin-bottom: 18px;
-      box-shadow: 0 2px 8px #0df6e055;
-      object-fit: cover;
-  }
-
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-<!--       <img src="profile.jpg" alt="Sathya Rangaraj profile" class="profile-img" /> -->
+      <!-- Uncomment the next line and update 'profile.jpg' to your image file to show your photo -->
+      <!-- <img src="profile.jpg" alt="Sathya Rangaraj profile" class="profile-img" /> -->
       <h1>Sathya Rangaraj</h1>
       <div class="contact-row">
         <a href="mailto:rangarajsathya53@gmail.com" title="Email">Email</a>
@@ -210,8 +213,3 @@
   </div>
 </body>
 </html>
-
-
-
-
-
