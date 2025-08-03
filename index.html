@@ -14,12 +14,18 @@
       --soft: #bdd4ef;
       --title: #7bd3fa;
     }
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
-      font-family: 'Poppins', Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+    body {
       background: var(--bg-gradient);
       color: #e2e7ef;
+      font-family: 'Poppins', Arial, sans-serif;
       min-height: 100vh;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
     }
     .nav {
       background: rgba(30,41,78,0.99);
@@ -63,9 +69,33 @@
       background: #c5eafd22;
       color: #1189e6;
     }
+
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    section {
+      scroll-snap-align: start;
+      min-height: 100vh;
+      background: var(--surface);
+      margin: 0 0 40px 0;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 32px 26px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    /* Special for hero section */
     .hero {
       text-align: center;
       padding: 70px 12px 40px 12px;
+      background: transparent;
+      box-shadow: none;
+      min-height: 80vh;
+      justify-content: flex-end;
     }
     .hero-img {
       width: 135px;
@@ -109,37 +139,6 @@
       opacity: .87;
       font-weight: 500;
     }
-    main {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 18px 16px 50px;
-    }
-    /* Hide all pages by default */
-    .page-section {
-      display: none;
-      background: var(--surface);
-      border-radius: 16px;
-      margin: 28px 0;
-      box-shadow: var(--shadow);
-      padding: 32px 26px;
-      min-height: 300px;
-    }
-    /* Show the :target page (when URL fragment matches the section id) */
-    .page-section:target {
-      display: block;
-      animation: fadeIn .5s;
-    }
-    /* Show the About section by default, unless another target is selected */
-    #about:not(:target) ~ .page-section:target,
-    #about:target {
-      display: block;
-      animation: fadeIn .5s;
-    }
-    /* Additional fade-in animation for effect */
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px);}
-      100% { opacity: 1; transform: translateY(0); }
-    }
     h2 {
       color: var(--title);
       font-size: 1.32rem;
@@ -161,7 +160,7 @@
       .nav-container {padding: 0 6px;}
       .hero {padding: 37px 2vw 25px 2vw;}
       main {padding: 13px 3vw 32px;}
-      .page-section {padding: 17px 6px;}
+      section, .hero {padding: 17px 6px;}
       h2 {font-size: 1rem;}
       .hero-img {width: 89px; height: 89px;}
       .hero-title {font-size: 1.3rem;}
@@ -173,7 +172,7 @@
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav-container">
-      <a href="#about" class="nav-logo">Sathya R</a>
+      <a href="#home" class="nav-logo">Sathya R</a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#objective">Objective</a></li>
@@ -186,35 +185,37 @@
     </div>
   </nav>
 
-  <!-- Hero / Intro -->
-  <section class="hero" id="home">
-    <img src="sathya.jpg" alt="Sathya Rangaraj Photo" class="hero-img">
-    <div class="hero-title">Sathya Rangaraj</div>
-    <div class="hero-contact">
-      <a href="mailto:rangarajsathya53@gmail.com">Email</a>
-      <a href="tel:+917358981171">+91 7358981171</a>
-      <a href="https://www.linkedin.com/in/sathya53/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/SATHYARANGARAJ53" target="_blank" rel="noopener">GitHub</a>
-    </div>
-    <div class="address">
-      7/108, Jadayampalayam, Mettupalayam, Coimbatore, India
-    </div>
-  </section>
-
   <main>
-    <section id="about" class="page-section">
+    <!-- Hero/Intro (as About section or Home) -->
+    <section class="hero" id="home">
+      <img src="sathya.jpg" alt="Sathya Rangaraj Photo" class="hero-img">
+      <div class="hero-title">Sathya Rangaraj</div>
+      <div class="hero-contact">
+        <a href="mailto:rangarajsathya53@gmail.com">Email</a>
+        <a href="tel:+917358981171">+91 7358981171</a>
+        <a href="https://www.linkedin.com/in/sathya53/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/SATHYARANGARAJ53" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="address">
+        7/108, Jadayampalayam, Mettupalayam, Coimbatore, India
+      </div>
+    </section>
+
+    <section id="about">
       <h2>About Me</h2>
       <p>
         Recent graduate in Information Technology and current Associate Engineer at Coforge, passionate about problem-solving, continuous learning, and delivering impactful technology solutions. I thrive on collaboration and innovation, looking to grow as a software developer.
       </p>
     </section>
-    <section id="objective" class="page-section">
+
+    <section id="objective">
       <h2>Career Objective</h2>
       <p>
         To leverage my technical and interpersonal skills as an Associate Engineer at Coforge, contributing fresh ideas to innovative projects. I seek to build expertise in software engineering while supporting my company's goals and pursuing personal and professional growth.
       </p>
     </section>
-    <section id="education" class="page-section">
+
+    <section id="education">
       <h2>Education</h2>
       <p>
         <strong>Bachelor of Technology (Information Technology)</strong><br>
@@ -222,14 +223,16 @@
         CGPA: 8.11 (2021 – 2025)
       </p>
     </section>
-    <section id="skills" class="page-section">
+
+    <section id="skills">
       <h2>Skills</h2>
       <ul>
         <li><strong>Technical:</strong> Java (Intermediate), MERN Stack (Intermediate), Flask (Beginner), Android Development (Beginner)</li>
         <li><strong>Soft:</strong> Problem Solving, Collaboration, Quick Learner</li>
       </ul>
     </section>
-    <section id="projects" class="page-section">
+
+    <section id="projects">
       <h2>Projects</h2>
       <ul>
         <li>
@@ -258,7 +261,8 @@
         </li>
       </ul>
     </section>
-    <section id="certificates" class="page-section">
+
+    <section id="certificates">
       <h2>Certificates</h2>
       <ul>
         <li>Data Structures and Algorithms using Java - Infosys Springboard</li>
@@ -269,7 +273,8 @@
         <li>Java Full Stack - Wipro TalentNext</li>
       </ul>
     </section>
-    <section id="contact" class="page-section">
+
+    <section id="contact">
       <h2>Contact</h2>
       <ul>
         <li><strong>Email:</strong> <a href="mailto:rangarajsathya53@gmail.com">rangarajsathya53@gmail.com</a></li>
